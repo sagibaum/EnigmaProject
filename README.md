@@ -38,7 +38,7 @@ Project Modules explenation:
    
    •	Exceptions – A package responsible for throwing expceptions on invalid data inputs.
    
-   •	File – A package Divided into packs of a file checker class , which checks the integrity of the supplied input file, and file reader class which responsible           to read the xml input file.
+   •	File – A package Divided into packs of a file checker class , which checks the integrity of the supplied input file, and file reader class which responsible           to read the xml input file. **xml files exampels will be in the "Game" directory**.
    
    •	Randomizer – Responsible to supply a random configuration of a machine given.
    
