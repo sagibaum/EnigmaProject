@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.text.Font?>
-<TextArea fx:id="EncryptTextAreaT2" promptText="Words you chosed from dictionary will display here.." xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EncryptDecryptTabController.UserInputTextArea.UserInputTextAreaController">
-   <font>
-      <Font size="13.0" />
-   </font>
-</TextArea>
