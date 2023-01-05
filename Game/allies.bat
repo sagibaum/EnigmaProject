@@ -1,0 +1,1 @@
+java -jar Allies_jar\Allies.jar

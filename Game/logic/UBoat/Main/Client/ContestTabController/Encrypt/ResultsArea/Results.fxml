@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Font?>
+
+<TextArea fx:id="EncryptResultTextArea" editable="false" promptText="Encrypted text will show here.." xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.ContestTabController.Encrypt.ResultsArea.ResultsAreaController">
+   <font>
+      <Font size="13.0" />
+   </font>
+</TextArea>

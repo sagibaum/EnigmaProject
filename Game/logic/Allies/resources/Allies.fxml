@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="1196.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.AlliesClientController">
+  <content>
+      <TabPane fx:id="AlliesTabs" prefHeight="595.0" prefWidth="868.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="DashBoardTab" text="Dashboard">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="119.60000610351562" minHeight="0.0" prefHeight="27.600006103515625" valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints fillHeight="false" maxHeight="119.60000610351562" minHeight="10.0" prefHeight="19.600006103515625" valignment="CENTER" vgrow="NEVER" />
+                      <RowConstraints maxHeight="290.3999938964844" minHeight="10.0" prefHeight="157.39999389648438" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="248.00003051757812" minHeight="9.79998779296875" prefHeight="24.20001220703125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="34.5999755859375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="30.199981689453125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="34.20001220703125" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="65.39996337890625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Team's Agents Data:" textAlignment="CENTER" textFill="#0077ff" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Contests Data:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="AvailableContestList" onMouseClicked="#showSelectedContestData" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </ListView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Available Contests:" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="This Team's Agents:" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <ListView fx:id="AgentList" prefHeight="181.0" prefWidth="300.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="6" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </ListView>
+                        <Pane fx:id="ContestDataPane" prefHeight="39.0" prefWidth="414.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" text="Battlefield: " textAlignment="CENTER" />
+                              <TextField fx:id="BattlefieldTextField" editable="false" layoutX="79.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="281.0" promptText="battlefield name shows up here.." />
+                              <Label layoutY="33.0" text="Username: " />
+                              <TextField fx:id="UboatUsernameTextField" editable="false" layoutX="80.0" layoutY="30.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="279.0" promptText="uboat username shows up here.." />
+                              <Label layoutY="61.0" text="Game Status:" />
+                              <Label fx:id="GameStatusLabel" layoutX="95.0" layoutY="61.0" text="Running / Idle" textFill="#1a9e00" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="204.0" layoutY="61.0" text="Difficulty:" />
+                              <Label fx:id="MissionDifficultyLabel" layoutX="281.0" layoutY="61.0" text="Easy" />
+                              <Label layoutY="92.0" text="Allies Needed:" />
+                              <Label layoutX="160.0" layoutY="92.0" text="Allies Joined:" />
+                              <Label fx:id="AlliesNeededLabel" layoutX="111.0" layoutY="92.0" text="#" />
+                              <Label fx:id="AlliesJoinedLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="92.0" text="#" />
+                              <Label fx:id="ContestSelectionErrorLabel" layoutX="-3.0" layoutY="126.0" opacity="0.0" text="error message here" textFill="#d00000" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Pane>
+                        <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7">
+                           <children>
+                              <Button fx:id="ChooseBattlefieldButton" mnemonicParsing="false" onMouseClicked="#selectCompetition" text="Choose Battelfield" />
+                              <Button fx:id="LogOutButtonDashTab" mnemonicParsing="false" onMouseClicked="#LogOut" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+          </Tab>
+          <Tab fx:id="ContestTab" text="Contest">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="257.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="271.0" />
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="340.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="119.60000610351562" minHeight="0.0" prefHeight="23.0" valignment="CENTER" vgrow="NEVER" />
+                        <RowConstraints maxHeight="290.3999938964844" minHeight="10.0" prefHeight="154.0" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="9.79998779296875" prefHeight="27.600006103515625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="36.0" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="31.0" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="4.800018310546875" prefHeight="23.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="248.00003051757812" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="167.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Contest Data:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Contest Teams:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="100.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Pane fx:id="ContestDataPaneContestTab" maxWidth="1.7976931348623157E308" prefHeight="137.0" prefWidth="371.0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="4.0" text="Battlefield: " textAlignment="CENTER" />
+                              <TextField fx:id="BattlefieldTextField2" editable="false" layoutX="85.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="250.0" promptText="battlefield name shows up here.." />
+                              <Label layoutY="31.0" text="Username: " />
+                              <TextField fx:id="UboatUsernameTextField2" editable="false" layoutX="85.0" layoutY="31.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="247.0" promptText="uboat username shows up here.." />
+                              <Label layoutY="61.0" text="Game Status:" />
+                              <Label fx:id="GameStatusLabel2" layoutX="102.0" layoutY="61.0" text="Running / Idle" textFill="#1a9e00" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="61.0" text="Difficulty:" />
+                              <Label fx:id="MissionDifficultyLabel2" layoutX="285.0" layoutY="61.0" text="Easy" />
+                              <Label layoutY="92.0" text="Allies Needed:" />
+                              <Label layoutX="160.0" layoutY="92.0" text="Allies Joined:" />
+                              <Label fx:id="AlliesNeededLabel2" layoutX="117.0" layoutY="92.0" text="#" />
+                              <Label fx:id="AlliesJoinedLabel2" alignment="CENTER" contentDisplay="CENTER" layoutX="267.0" layoutY="92.0" text="#" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="20.0" right="160.0" top="20.0" />
+                           </GridPane.margin>
+                        </Pane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Active Agents:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Team's Candidates:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="MissionSizeTextField" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="258.0" promptText="starting positions per mission here.." GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="SetMissionSizeButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#setStartingPosAmountPerMission" prefHeight="26.0" prefWidth="120.0" text="Set Mission Size" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <ToggleButton fx:id="ReadyForCompetitionButton" disable="true" mnemonicParsing="false" onAction="#setReady" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: green;" text="Ready!" textFill="#f8f8f8" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                        <ScrollPane fx:id="CandidatesScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="212.0" prefWidth="897.0" GridPane.columnIndex="2" GridPane.rowIndex="6" GridPane.rowSpan="4">
+                           <content>
+                              <TableView fx:id="CandidatesTable" prefHeight="200.0" prefWidth="200.0">
+                                 <columns>
+                                    <TableColumn fx:id="EncryptionTimeCol" editable="false" minWidth="30.0" prefWidth="143.0" text="Encrypt Time" />
+                                    <TableColumn fx:id="CodeConfigurationCol" editable="false" minWidth="50.0" prefWidth="140.0" text="Code Conf" />
+                                    <TableColumn fx:id="DecryptedMessageCol" editable="false" minWidth="105.0" prefWidth="170.0" text="Decrypted Message" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </content>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="5.0" right="5.0" />
+                           </GridPane.margin>
+                        </ScrollPane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Allies Progress:" textAlignment="CENTER" textFill="#0077ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Pane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Total Missions:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="TotalMissionsNumberLabel" prefHeight="21.0" prefWidth="150.0" text="#">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="24.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Missions Created:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="MissionsCreatedNumberLabel" prefHeight="21.0" prefWidth="135.0" text="#">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="55.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Missions Completed:">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="MissionsCompletedNumberLabel" prefHeight="21.0" prefWidth="115.0" text="#">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <ScrollPane fx:id="AgentsScrollPane" fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <content>
+                              <TableView fx:id="ActiveAgentsTableView" fixedCellSize="3.0" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="ActiveAgentsTableNameColumn" editable="false" prefWidth="65.0" text="Name" />
+                                  <TableColumn fx:id="ActiveAgentsTableTasksNumberColumn" editable="false" prefWidth="63.0" text="Tasks #" />
+                                    <TableColumn fx:id="ActiveAgentsTableCandidatesNumberColumn" editable="false" prefWidth="137.0" text="Candidates #" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </content>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" />
+                           </GridPane.margin>
+                        </ScrollPane>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Encrypted Message:" textAlignment="CENTER" textFill="#0077ff" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.rowIndex="5" GridPane.rowSpan="5">
+                           <content>
+                              <TextArea fx:id="EncryptedMessageTextArea" prefHeight="200.0" prefWidth="200.0" />
+                           </content>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </ScrollPane>
+                        <ScrollPane fx:id="contestTeamsScrollPane" fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="150.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                           <content>
+                              <TableView fx:id="ContestTeamsTableView" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="ContestTeamsNameColumn" editable="false" prefWidth="117.0" text="Name" />
+                                  <TableColumn fx:id="ContestTeamsAgentsNumberColumn" editable="false" prefWidth="175.0" text="Agents Number" />
+                                    <TableColumn fx:id="ContestTeamsMissionSizeColumn" editable="false" prefWidth="124.0" text="Mission Size" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <Label fx:id="waitingNotificationLabel" prefHeight="21.0" prefWidth="327.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <children>
+                              <Button fx:id="DashBoardButton" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#BackToDashBoard" prefHeight="31.0" prefWidth="150.0" text="Back To DashBoard" textFill="#0a2add" />
+                              <Button fx:id="LogOutButtonContestTab" mnemonicParsing="false" onMouseClicked="#LogOut" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: red;" text="Logout" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="winnerLabel" alignment="CENTER" prefHeight="40.0" prefWidth="601.0" textFill="#141414" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold Italic" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+  </content>
+</ScrollPane>

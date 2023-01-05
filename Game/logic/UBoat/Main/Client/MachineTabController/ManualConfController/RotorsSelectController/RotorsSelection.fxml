@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane prefHeight="237.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.MachineTabController.ManualConfController.RotorsSelectController.RotorsSelectController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="418.0" minWidth="10.0" prefWidth="169.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="334.0" minWidth="10.0" prefWidth="195.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="163.0" minHeight="10.0" prefHeight="133.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER" prefHeight="62.0" prefWidth="409.0" spacing="10.0" GridPane.columnSpan="2">
+         <children>
+            <Label fx:id="rotorsNumberLabel" prefHeight="31.0" prefWidth="348.0" text="Please choose " HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <content>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="205.0" text="Rotors available" textAlignment="CENTER" underline="true" VBox.vgrow="SOMETIMES">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
+                  <ListView fx:id="RotorsAvailableCheckViewList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <VBox alignment="CENTER" prefHeight="72.0" prefWidth="423.0" spacing="10.0" GridPane.rowIndex="2">
+         <children>
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="437.0" text="Please blacken chosen rotors" VBox.vgrow="NEVER" />
+            <Button fx:id="selectRotorsButton" alignment="CENTER" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#submitSelectedRotors" prefHeight="30.0" prefWidth="76.0" text="Select" textFill="#0703f2" wrapText="true" />
+         </children>
+      </VBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <content>
+            <VBox alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="21.0" prefWidth="205.0" text="Rotors order" textAlignment="CENTER" underline="true" VBox.vgrow="SOMETIMES">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="RotorsPositionCheckViewList" disable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <VBox alignment="CENTER" prefHeight="72.0" prefWidth="423.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="437.0" text="Please Choose order" VBox.vgrow="NEVER" />
+            <Button fx:id="selectRotorsPosButton" alignment="CENTER" disable="true" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#submitSelectedRotorsPos" prefHeight="30.0" prefWidth="76.0" text="Select" textFill="#0703f2" wrapText="true" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>
