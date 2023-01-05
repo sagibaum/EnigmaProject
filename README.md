@@ -19,10 +19,11 @@ How run the game ?
   c) to add agents -> press on the agent.bat file.
  
 Project Modules explenation: 
-1) machine module: 
+1)machine module: 
    Description by packages ->
       a)"data.transfer.unit" package -> Contains the relevant classes for the transfer of information between the engine and the physical machine.
       b)"parts" package -> Contains the different parts of the physical machine. In addition Contain the Available class that represent a warehouse of parts that given          in a xml configuration file.  
+      
 2)"Engine" module: Contains the various packages needed to control all data validation and transmission. 
    Description by packages->
       •	Decipher – Data structure that holds the forbidden letters and dictionary.
