@@ -28,23 +28,15 @@ Project Modules explenation:
 2)"Engine" module: Contains the various packages needed to control all data validation and transmission. 
    Description by packages->
       •	Decipher – Data structure that holds the forbidden letters and dictionary.
-      
       •	EngineFunctionality – The msin package that links the engine to a user interface.
-      
       •	Exceptions – A package responsible for throwing expceptions on invalid data inputs.
-      
       •	File – A package Divided into packs of a file checker class , which checks the integrity of the supplied input file, and file reader class which responsible            to read the xml input file.
       •	Randomizer – Responsible to supply a random configuration of a machine given.
-      
       •	Statistics- Responsible for managing the statistics of the currently loaded machine.
-      
       •	Mission - Contains the task class that runs by a thread (runnable class).
-      
       •	MissionCreator - Contains the class that creates tasks and pushes them to the queue that is on the server.
-      
       •	MissionResults - Contains a DTO that describes the results of a mission (The Agent clients will creat this DTO and send it to the server after each mission 
-         they completed).
-         
+         they completed).  
       •	StartingPosCalculator - Contains the class that responsible for calculates the initial configurations/rotors positions needed to pass by in order to                    decrypt(by brute-force) the message ,according to the level that the game is initialized on. afterwards each mission will get a range of starting positions            which the agents will pass by for trying decrypt the message.
 
 3)"out.scheme" module: Contains the classes that the jaxbe proccess generated(according to Scheme.xml file given beforehand).
