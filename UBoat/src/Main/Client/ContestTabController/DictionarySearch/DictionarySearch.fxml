@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<HBox prefHeight="25.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.ContestTabController.DictionarySearch.DictionarySearchController">
+   <children>
+      <TextField fx:id="T3WordSearchTextField" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#filterDictionaryWords" onKeyReleased="#filterDictionaryWords" onKeyTyped="#filterDictionaryWords" prefHeight="25.0" prefWidth="182.0" promptText="Type in here to search.." HBox.hgrow="ALWAYS">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin>
+      </TextField>
+      <Label alignment="CENTER" text="click on word to add it" textFill="#004aeb" />
+   </children>
+   <padding>
+      <Insets left="10.0" right="10.0" />
+   </padding>
+</HBox>

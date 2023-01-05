@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane alignment="CENTER" minHeight="424.0" minWidth="757.0" prefHeight="454.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.MachineTabController.MachineTabController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="278.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="278.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="243.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="229.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="31.0" minHeight="8.0" prefHeight="8.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="48.0" minHeight="7.0" prefHeight="7.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="133.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="200.0" minHeight="6.0" prefHeight="12.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="167.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="37.0" valignment="CENTER" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <Separator GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+      <Label fx:id="T1CodeCalibrationLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="172.0" text="Code Calibration" translateX="100.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Label>
+      <Label fx:id="T1PartConfLabel" alignment="TOP_CENTER" contentDisplay="TOP" lineSpacing="10.0" prefHeight="21.0" prefWidth="165.0" text="Part Configuration:" translateX="150.0" translateY="-108.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Label>
+      <Label fx:id="T1CurrMachineConfLabel" text="Current Machine Configuration" translateX="15.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="currentMachineComponent" source="MachineConfController/MachineConfTextArea.fxml" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="T1ManuallConfButton" alignment="CENTER" contentDisplay="CENTER" disable="true" maxWidth="250.0" mnemonicParsing="false" onMouseClicked="#ChooseMachineConfHandler" prefHeight="50.0" prefWidth="128.0" text="Choose Machine Configuration" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="T1ManualConfLabel" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="180.0" text="Enable this upon configuration" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="100.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="T1RandomConfLabel" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="175.0" text="Machine set successfully." textAlignment="CENTER" textFill="#33a40e" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="20.0" top="100.0" />
+         </GridPane.margin>
+      </Label>
+      <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="10.0" top="30.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="partConfTextAreaComponent" source="PartConfController/PartConfTextFiled.fxml" />
+         </content>
+      </ScrollPane>
+      <Separator prefHeight="3.0" prefWidth="552.0" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+      <fx:include fx:id="randomConfButtonComponent" source="RandomConfController/RandomConfButton.fxml" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <fx:include fx:id="imagesGridPaneComponent" source="ImagesController/MachineParts.fxml" />
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <Label alignment="CENTER" text="Fxml Contest details:" textFill="#2d03ff">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Battle Field Name: ">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="NameOfBattleFiled" text=" " />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Number of Alllies required for the contest: ">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="RequiredAllies" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Contest Diffculty: ">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MissionDifficulty" text=" " />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</GridPane>

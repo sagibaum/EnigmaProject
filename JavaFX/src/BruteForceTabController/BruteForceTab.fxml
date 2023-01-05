@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane prefHeight="476.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BruteForceTabController.BruteForceController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="640.0" minWidth="10.0" prefWidth="232.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="640.0" minWidth="10.0" prefWidth="26.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="640.0" minWidth="10.0" prefWidth="167.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="490.0" minWidth="10.0" prefWidth="344.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="137.0" minHeight="0.0" prefHeight="22.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="155.0" minHeight="0.0" prefHeight="33.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="278.0" minHeight="8.0" prefHeight="21.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="95.0" valignment="TOP" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="21.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="21.0" valignment="TOP" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="102.0" valignment="CENTER" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="120.0" valignment="BOTTOM" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <Label fx:id="T3CurrMachineConfLable" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="757.0" text="Current Machine Configuration:" textAlignment="CENTER" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="12.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="T3CurrMachinTextFiled" alignment="CENTER" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="717.0" promptText="Machine config here.." GridPane.columnSpan="4" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="4.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label fx:id="T3InputMessageLabel" text="Input Message" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="86.0" prefWidth="256.0" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="InputTextAreaComponent" source="InputMessageTextArea/InputTextArea.fxml" />
+         </content>
+      </ScrollPane>
+      <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="86.0" prefWidth="256.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="DictionaryListViewComponent" source="DictionaryListView/DictionaryListView.fxml" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="T3DictionaryWordsLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="757.0" text="Dictionary Words" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </Label>
+      <Button fx:id="T3ProcessButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#processMessage" prefHeight="25.0" prefWidth="123.0" text="Process" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets right="113.0" />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="T3ResetButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#resetMachineToInitial" prefHeight="25.0" prefWidth="100.0" text="Reset" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="140.0" />
+         </GridPane.margin>
+      </Button>
+      <Label fx:id="T3ErrorsLabel" minHeight="-Infinity" opacity="0.0" prefHeight="25.0" prefWidth="133.0" text="Errors will show up here.." GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="30.0" />
+         </GridPane.margin>
+      </Label>
+      <Slider fx:id="T3AgentAmountSlider" majorTickUnit="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" prefHeight="19.0" prefWidth="134.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets left="10.0" right="90.0" top="10.0" />
+         </GridPane.margin>
+      </Slider>
+      <Label fx:id="T3AgentAmountLabel" alignment="CENTER" contentDisplay="CENTER" text="Agents Amount" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets right="85.0" top="-45.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="T3DifficultLevelComboBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="147.0" promptText="Difficulty level" visibleRowCount="5" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="25.0" left="40.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <TextField fx:id="T3MissionSizeTextField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="147.0" promptText="Mission Size (natural number)" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <GridPane.margin>
+            <Insets bottom="25.0" left="70.0" right="310.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="T3SetAgentConfButton" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#setDecryptionManager" prefHeight="28.0" prefWidth="191.0" text="Set Agents Configuration" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="65.0" top="60.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="T3StartButton" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#startBruteProcess" prefHeight="30.0" prefWidth="55.0" text="Start" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="25.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="T3StopButton" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#restartEntireConfiguration" prefHeight="30.0" prefWidth="66.0" text="Stop" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="25.0" left="155.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="T3ErrWithMissionSizeLabel" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="243.0" text="0.0%" textAlignment="CENTER" textFill="#ec6f33" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="100.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="T3PauseButton" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#processPauseLogic" prefHeight="30.0" text="Pause" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="60.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="T3ResumeButton" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#processResumeLogic" prefHeight="30.0" text="Resume" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="155.0" top="60.0" />
+         </GridPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="40.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="CandidatesFlowPaneComponent" source="CandidatesFlowPane/CandidatesFlowPane.fxml" />
+         </content>
+      </ScrollPane>
+      <ProgressBar fx:id="T3MissionProgressBar" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="853.0" progress="0.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </ProgressBar>
+      <Button fx:id="T3ClearButton" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clearText" prefHeight="25.0" prefWidth="100.0" text="Clear" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="110.0" />
+         </GridPane.margin>
+      </Button>
+      <fx:include fx:id="DictionaryHBoxComponent" source="DictionarySearchHbox/DictionaryHbox.fxml" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+   </children>
+</GridPane>

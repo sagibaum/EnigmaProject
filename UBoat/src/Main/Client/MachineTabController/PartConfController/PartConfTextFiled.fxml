@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.TextArea?>
+<TextArea fx:id="T1PartTextArea" editable="false" maxHeight="-Infinity" prefHeight="246.0" prefWidth="510.0" promptText="Here if clicked on the entire machine option 2 will show, including DMs and Dictionary, if other parts are clicked more specific detailed information about the part clicked will show" wrapText="true" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.MachineTabController.PartConfController.PartsConfController" />

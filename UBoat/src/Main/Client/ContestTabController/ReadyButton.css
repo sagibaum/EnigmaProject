@@ -1,0 +1,21 @@
+
+.toggle-button {
+    -fx-color: black;
+    -fx-text-fill: white;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 3px;
+    -fx-opacity: 0.8;-fx-setPrefWidth:100;
+
+}
+
+.toggle-button:selected {
+    -fx-background-color: -fx-shadow-highlight-color;
+    -fx-border-color: green;
+
+
+}
+
+.toggle-button:selected:focused {
+    -fx-background-color:-fx-focus-color;
+    -fx-border-color: #FFFFFF;
+}

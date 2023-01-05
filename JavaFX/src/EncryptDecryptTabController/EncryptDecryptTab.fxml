@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane prefHeight="476.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EncryptDecryptTabController.EncryptDecryptTabController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="640.0" minWidth="10.0" prefWidth="232.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="640.0" minWidth="10.0" prefWidth="27.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="221.0" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="490.0" minWidth="10.0" prefWidth="283.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="137.0" minHeight="0.0" prefHeight="21.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="155.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="278.0" minHeight="8.0" prefHeight="26.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="193.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="278.0" minHeight="0.0" prefHeight="34.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="149.0" valignment="BOTTOM" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="4.0" prefHeight="138.0" valignment="BOTTOM" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="33.0" valignment="BOTTOM" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <Label fx:id="CurrMachineConfLabelT2" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="757.0" text="Current Machine Configuration:" textAlignment="CENTER" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="3.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="EncryptDecryptLabelT2" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="475.0" text="Encryption \ Decryption" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label fx:id="StatisticsLabelT2" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="323.0" text="Statistics" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="200.0" vmax="0.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="StatsComponent" source="Stats/Stats.fxml" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="ArrowLabelT2" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="30.0" text="-&gt;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="176.0" prefWidth="225.0" vmax="0.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <content>
+            <fx:include fx:id="ResultComponent" source="ResultTextArea/ResultTextArea.fxml" />
+         </content>
+      </ScrollPane>
+      <TextField fx:id="MachineConfTextFieldT2" alignment="CENTER" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="717.0" promptText="Machine config here.." GridPane.columnSpan="4" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </TextField>
+      <HBox fx:id="processHBox" disable="true" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="EncryptButtonT2" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#encryptMessageAndDisplay" prefHeight="26.0" prefWidth="84.0" text="Proccess" textAlignment="CENTER" textFill="#0080ff" translateX="10.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+            <RadioButton fx:id="byLettersRadioButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#toggleEncryptionButtonAction" prefHeight="26.0" prefWidth="126.0" text="By Letters" textAlignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </HBox>
+      <Button fx:id="T2ClearButton" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clearFields" prefHeight="26.0" prefWidth="72.0" text="Clear" textAlignment="CENTER" textFill="#0080ff" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <Button fx:id="ResetButtonT2" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#resetMachineToInitial" prefHeight="26.0" prefWidth="72.0" text="Reset" textAlignment="CENTER" textFill="#0ed300" translateX="15.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <Button fx:id="ShowStatsButtonT2" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#displayStats" prefHeight="26.0" prefWidth="110.0" text="Show Stats" textAlignment="CENTER" textFill="#c34405" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="176.0" prefWidth="225.0" vmax="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" top="10.0" />
+         </GridPane.margin>
+         <content>
+            <fx:include fx:id="UserInputComponent" source="UserInputTextArea/UsetInputTextArea.fxml" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="T2DoneButton" alignment="CENTER" contentDisplay="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addToStatsAndClearLong" prefHeight="26.0" prefWidth="72.0" text="Done" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Button>
+      <fx:include fx:id="KeyBoardComponent" source="KeyBoard/KeyBoard.fxml" GridPane.columnSpan="4" GridPane.rowIndex="6" />
+      <fx:include fx:id="BulbBoardComponent" source="LightBoard/BulbBoard.fxml" GridPane.columnSpan="4" GridPane.rowIndex="5" />
+   </children>
+</GridPane>

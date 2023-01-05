@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.login.LoginController">
+   <content>
+      <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="323.0">
+         <children>
+                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="304.0" text="UBOAT LOGIN TO SERVER" textAlignment="CENTER" textFill="#057cfb">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+                    </Label>
+                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@Uboat.jpg" />
+                        </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+                    </ImageView>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="448.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="UserNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="294.0" promptText="User Name" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="LoginButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#loginButtonClicked" prefHeight="31.0" prefWidth="130.0" styleClass="topPane" text="LOGIN" textFill="#057cfb">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Label fx:id="errorMessageLabel" alignment="CENTER" opacity="0.0" prefHeight="122.0" prefWidth="426.0" text="error" textFill="#eb0a0a" wrapText="true" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

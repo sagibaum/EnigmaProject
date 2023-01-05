@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.*?>
+<ScrollPane fx:id="mainStage" fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RootController.RootController">
+   <content>
+      <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="893.0">
+         <center>
+            <BorderPane prefHeight="740.0" prefWidth="893.0" BorderPane.alignment="CENTER">
+               <center>
+                  <GridPane fx:id="mainGrid" prefHeight="710.0" prefWidth="893.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="ALWAYS" prefWidth="127.0" />
+                      <ColumnConstraints hgrow="ALWAYS" prefWidth="433.0" />
+                        <ColumnConstraints hgrow="ALWAYS" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints fillHeight="false" maxHeight="60.0" minHeight="32.0" prefHeight="39.0" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="550.0" minHeight="386.0" prefHeight="533.0" valignment="CENTER" vgrow="ALWAYS" />
+                      <RowConstraints maxHeight="172.0" minHeight="93.0" prefHeight="114.0" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <TabPane prefHeight="476.0" prefWidth="893.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                          <tabs>
+                            <Tab fx:id="T1MachinTab" text="Machine">
+                                 <content>
+                                    <GridPane alignment="CENTER" minHeight="424.0" minWidth="757.0" prefHeight="454.0" prefWidth="893.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="278.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="278.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="243.0" />
+                                          <ColumnConstraints />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="229.0" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="31.0" minHeight="8.0" prefHeight="8.0" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="48.0" minHeight="7.0" prefHeight="7.0" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="154.0" minHeight="10.0" prefHeight="133.0" valignment="CENTER" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="200.0" minHeight="6.0" prefHeight="12.0" valignment="CENTER" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="167.0" valignment="CENTER" vgrow="ALWAYS" />
+                                          <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="37.0" valignment="CENTER" vgrow="ALWAYS" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Separator GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                                          <GridPane minHeight="232.0" minWidth="309.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ImageView fx:id="T1ReflectorImage" disable="true" fitHeight="71.0" fitWidth="117.0" onMouseClicked="#displayAvailableReflectors" onMouseEntered="#startAnimation" onMouseExited="#stopAnimation" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Resources/reflector-removebg-preview.png" />
+                                                   </image>
+                                                   <cursor>
+                                                      <Cursor fx:constant="OPEN_HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <ImageView fx:id="T1RotorImage" disable="true" fitHeight="62.0" fitWidth="110.0" onMouseClicked="#displayAvailableRotors" onMouseEntered="#startAnimation" onMouseExited="#stopAnimation" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Resources/rotor_set-removebg-preview.png" />
+                                                   </image>
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="OPEN_HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <ImageView fx:id="T1KeyBoardImage" disable="true" fitHeight="50.0" fitWidth="200.0" onMouseClicked="#displayABC" onMouseEntered="#startAnimation" onMouseExited="#stopAnimation" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Resources/keyboard.jpeg" />
+                                                   </image>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="OPEN_HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <ImageView fx:id="T1PlugImage" disable="true" fitHeight="62.0" fitWidth="169.0" onMouseClicked="#displayPlugBoardConfiguration" onMouseEntered="#startAnimation" onMouseExited="#stopAnimation" pickOnBounds="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Resources/plugboard.jpeg" />
+                                                   </image>
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="OPEN_HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                                <ImageView fx:id="T1MachineImage" disable="true" fitHeight="160.0" fitWidth="103.0" onMouseClicked="#displayMachineConfiguration" onMouseEntered="#startAnimation" onMouseExited="#stopAnimation" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Resources/image-removebg-preview.png" />
+                                                   </image>
+                                                   <cursor>
+                                                      <Cursor fx:constant="OPEN_HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                             </children>
+                                          </GridPane>
+                                          <Label fx:id="T1CodeCalibrationLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="172.0" text="Code Calibration" translateX="100.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                          <Label fx:id="T1PartConfLabel" alignment="TOP_CENTER" contentDisplay="TOP" lineSpacing="10.0" prefHeight="21.0" prefWidth="165.0" text="Part Configuration:" translateX="150.0" translateY="-108.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                          <Label fx:id="T1CurrMachineConfLabel" text="Current Machine Configuration" translateX="15.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </GridPane.margin>
+                                             <content>
+                                                <TextArea fx:id="T1CurrMachineConfTextArea" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="121.0" prefWidth="126.0" promptText="Here Initial machine configuration, and current machine configuration will show ( option 2 )" />
+                                             </content>
+                                          </ScrollPane>
+                                          <Button fx:id="T1ManuallConfButton" alignment="CENTER" contentDisplay="CENTER" disable="true" maxWidth="250.0" mnemonicParsing="false" onMouseClicked="#ChooseMachineConfHandler" prefHeight="50.0" prefWidth="128.0" text="Choose Machine Configuration" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Button fx:id="T1RandomConfButton" alignment="CENTER" contentDisplay="CENTER" disable="true" maxWidth="250.0" minHeight="50.0" minWidth="128.0" mnemonicParsing="false" onMouseClicked="#setRandomMachineConfig" prefHeight="50.0" prefWidth="128.0" text="Randomize Machine Configuration" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font name="Calibri" size="12.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                          <Label fx:id="T1ManualConfLabel" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="180.0" text="Enable this upon configuration" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets top="100.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="T1RandomConfLabel" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="17.0" prefWidth="175.0" text="Machine set successfully." textAlignment="CENTER" textFill="#33a40e" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets bottom="20.0" top="100.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                             <GridPane.margin>
+                                                <Insets bottom="20.0" left="20.0" right="10.0" top="30.0" />
+                                             </GridPane.margin>
+                                             <content>
+                                                <TextArea fx:id="T1PartTextArea" editable="false" maxHeight="-Infinity" prefHeight="246.0" prefWidth="510.0" promptText="Here if clicked on the entire machine option 2 will show, including DMs and Dictionary, if other parts are clicked more specific detailed information about the part clicked will show" wrapText="true" />
+                                             </content>
+                                          </ScrollPane>
+                                          <Separator prefHeight="3.0" prefWidth="552.0" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+                                          <MediaView fx:id="videoViewT1" fitHeight="150.0" fitWidth="400.0" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                                          <VBox fx:id="videoVBox" alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="39.0" prefWidth="299.0" spacing="5.0">
+                                                   <children>
+                                                      <Button fx:id="T1PlayVideoButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#playVideo" text="Play">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="OPEN_HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button fx:id="T1PauseVideoButton" mnemonicParsing="false" onAction="#pauseVideo" text="Pasue">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="CLOSED_HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Button fx:id="T1ResetVideoButton" mnemonicParsing="false" onAction="#resetVideo" text="Reset">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Button>
+                                                      <Slider fx:id="VolumeVideoSlider" blockIncrement="5.0" value="50.0">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                      </Slider>
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="T1videolabel" alignment="CENTER" prefHeight="21.0" prefWidth="276.0" text="Enigma machine explanatory video(1:25)" textFill="#c3b900">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                            </Tab>
+                            <Tab fx:id="T2EncryptDecryptTab" text="Encrypt \ Decrypt">
+                                 <content>
+                                    <fx:include fx:id="encryptComponent" source="../EncryptDecryptTabController/EncryptDecryptTab.fxml" />
+                                 </content>
+                            </Tab>
+                              <Tab fx:id="T3BruteForceTab" text="Brute Force">
+                                 <content>
+                                    <fx:include fx:id="bruteForceComponent" source="../BruteForceTabController/BruteForceTab.fxml" />
+                                 </content>
+                              </Tab>
+                          </tabs>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </TabPane>
+                        <Button fx:id="LoadFilebutton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#SelectFileHandler" prefHeight="29.0" prefWidth="101.0" text="Select File" textAlignment="CENTER" translateX="75.0">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="35.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TextField fx:id="FilePathTextField" alignment="TOP_LEFT" minHeight="0.0" onKeyTyped="#UnlockLoadIfNeeded" prefHeight="29.0" prefWidth="485.0" promptText="Press load button, input a file, or drag a file here..." GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                           <GridPane.margin>
+                              <Insets left="220.0" right="70.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </TextField>
+                        <Button fx:id="LoadButton" disable="true" minHeight="27.0" mnemonicParsing="false" onMouseClicked="#LoadHandler" prefHeight="29.0" text="Load" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ComboBox fx:id="SkinComboBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="100.0" visibleRowCount="3">
+                           <GridPane.margin>
+                              <Insets left="5.0" />
+                           </GridPane.margin>
+                        </ComboBox>
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </center>
+         <top>
+            <Label fx:id="EnigmaMachineHeaderLabel" alignment="TOP_LEFT" text="Enigma Machine" textFill="#39c653" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <bottom>
+            <Label fx:id="OwnersLabel" alignment="CENTER" contentDisplay="CENTER" opacity="0.6" prefHeight="21.0" prefWidth="190.0" text="Sagi Baum, Michael Ohava" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </bottom>
+      </BorderPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Client.MachineTabController.ManualConfController.InitialPosController.RotorsInitPosController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="131.0" valignment="CENTER" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="384.0" text="Please choose initial position for each rotor:" textAlignment="CENTER" GridPane.halignment="CENTER" />
+      <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <content>
+            <ListView fx:id="InitPosChoiceBoxViewList" disable="true" prefHeight="200.0" prefWidth="200.0" />
+         </content>
+      </ScrollPane>
+      <VBox alignment="CENTER" prefHeight="72.0" prefWidth="350.0" spacing="10.0" GridPane.rowIndex="2">
+         <children>
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="350.0" text="When finished ,click on submit button ">
+               <padding>
+                  <Insets left="4.0" />
+               </padding>
+            </Label>
+            <Button fx:id="submitRotorsInitPosButton" alignment="CENTER" disable="true" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#submitInitPos" prefHeight="30.0" prefWidth="76.0" text="Submit" textFill="#0404f2" wrapText="true" />
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets left="2.0" right="2.0" />
+   </padding>
+</GridPane>
