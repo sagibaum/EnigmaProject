@@ -69,18 +69,18 @@ Game Rules And Apps explenation:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uboat App:
 1.First of all, the user must Register to use the application.Each UBoat must have a unique name!
-2.Upload a competition file in XML format (you can fined valid/unvalid formats in the resourses package)  to the server , which includes:
-   a.Name of the battlefield
-   b.Number of allied teams
-   c.Difficulty of the competition
+
+2.Upload a competition file in XML format (you can fined valid/unvalid formats in the resourses package)  to the server , which includes:Name of the battlefield, Number of allied teams and Difficulty of the competition.
+   
 3.Once the file is verified, the user will be transferred to the competition screen(Input tests will be performed on the uploaded file to check its legality).
+
 4.The user can determine the initial machine code and encrypt a valid message using only words from the dictionary file(in the xml file uploaded before).
-5.The competition screen displays information about the competing teams, including:
-   a.Name of the team
-   b.Amount of agents
-   c.Size of the task
+
+5.The competition screen displays information about the competing teams, including: Name of the team, Amount of agents and Size of the task.
+   
 5.Once all competing teams are present and pressed "ready" button, the competition starts.
-6.The UBoat user waits to receive a stream of candidate messages for cracking the message they encrypted.
-  The first team to crack the message wins the competition.
+
+6.The UBoat user waits to receive a stream of candidate messages for cracking the message they encrypted.The first team to crack the message wins the competition.
+  
 7.When the game ends, the UBoat player remains in the competition screen and waits for additional players to start a new game.
  
